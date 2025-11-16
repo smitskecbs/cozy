@@ -6,7 +6,10 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #0a0f1c;
+  background:
+    radial-gradient(circle at 10% 0%, #1a2748 0%, transparent 55%),
+    radial-gradient(circle at 90% 100%, #2a1f4a 0%, transparent 55%),
+    #0a0f1c;
   color: #e4e4e4;
   line-height: 1.6;
 }
@@ -16,44 +19,64 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111827;
+  background: linear-gradient(90deg, #0b1020, #111827, #151b2c);
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
 }
 
 header .logo h1 {
   color: #00f0ff;
   font-size: 24px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.8),
+               0 0 18px rgba(255, 0, 122, 0.6);
 }
 
 header .logo span {
   color: #ff007a;
 }
 
+/* Nav */
 nav ul {
   display: flex;
   list-style: none;
+  background: rgba(10, 15, 30, 0.7);
+  border-radius: 999px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.18);
+  padding: 6px 10px;
 }
 
 nav ul li {
-  margin: 0 10px;
+  margin: 0 6px;
 }
 
 nav ul li a {
   color: #f1f1f1;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.15s;
 }
 
 nav ul li a:hover {
-  color: #00f0ff;
+  color: #0a0f1c;
+  background: linear-gradient(135deg, #00f0ff, #ff007a);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.6);
+  transform: translateY(-1px);
 }
 
 nav ul li a.active {
-  color: #ff007a;
+  color: #0a0f1c;
+  background: linear-gradient(135deg, #ff007a, #00f0ff);
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.8);
 }
 
 /* Mobile menu icon (hidden by default) */
@@ -68,12 +91,15 @@ nav ul li a.active {
 .section {
   padding: 60px 20px;
   text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .section h2 {
   font-size: 32px;
   margin-bottom: 20px;
   color: #00f0ff;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.75);
 }
 
 /* Home */
@@ -81,6 +107,9 @@ nav ul li a.active {
   font-size: 18px;
   margin: 20px auto;
   max-width: 700px;
+  background: radial-gradient(circle at top, rgba(0, 240, 255, 0.12), transparent 60%);
+  padding: 10px 16px;
+  border-radius: 14px;
 }
 
 /* Crypto icons */
@@ -95,6 +124,17 @@ nav ul li a.active {
 
 .crypto-icons div {
   text-align: center;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 240, 255, 0.18), #111827);
+  border-radius: 16px;
+  padding: 12px 10px;
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.15);
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.crypto-icons div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
 }
 
 .crypto-icons img {
@@ -103,6 +143,7 @@ nav ul li a.active {
   display: block;
   margin: 0 auto;
   transition: transform 0.25s;
+  filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.8));
 }
 
 .crypto-icons p {
@@ -117,17 +158,24 @@ nav ul li a.active {
   margin: 0 auto;
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
+  background: rgba(10, 15, 30, 0.9);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  padding: 18px 20px;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
 }
 
 .about .highlight {
-  color: #ff007a;
+  color: #ff4fa3;
   font-weight: bold;
 }
 
 .about-image img {
   width: 250px;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 18px;
+  box-shadow: 0 0 30px rgba(255, 0, 122, 0.4);
+  border: 1px solid rgba(255, 0, 122, 0.6);
 }
 
 /* Services */
@@ -138,11 +186,13 @@ nav ul li a.active {
 }
 
 .services li {
-  background: #1a2236;
+  background: radial-gradient(circle at 0% 0%, rgba(255, 0, 122, 0.18), #1a2236);
   margin: 10px 0;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 14px;
   font-size: 18px;
+  border: 1px solid rgba(255, 0, 122, 0.35);
+  box-shadow: 0 0 20px rgba(255, 0, 122, 0.3);
 }
 
 /* Proof of work */
@@ -155,10 +205,18 @@ nav ul li a.active {
 }
 
 .proof-item {
-  background: #1a2236;
-  border-radius: 10px;
+  background: radial-gradient(circle at 10% 0%, rgba(0, 240, 255, 0.18), #1a2236);
+  border-radius: 16px;
   overflow: hidden;
   width: 260px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.proof-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
 }
 
 .proof-item img {
@@ -172,11 +230,21 @@ nav ul li a.active {
 }
 
 /* Contact */
+.contact p {
+  max-width: 600px;
+  margin: 0 auto 10px;
+}
+
 .contact ul {
   list-style: none;
   max-width: 500px;
   margin: 20px auto;
   text-align: left;
+  background: rgba(10, 15, 30, 0.9);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 22px rgba(0, 240, 255, 0.2);
+  padding: 16px 18px;
 }
 
 .contact li {
@@ -187,10 +255,13 @@ nav ul li a.active {
 .contact a {
   color: #00f0ff;
   text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
 }
 
 .contact a:hover {
   color: #ff007a;
+  text-shadow: 0 0 12px rgba(255, 0, 122, 0.85);
 }
 
 /* Footer */
@@ -200,6 +271,8 @@ footer {
   padding: 20px;
   font-size: 14px;
   color: #aaa;
+  border-top: 1px solid rgba(0, 240, 255, 0.18);
+  box-shadow: 0 -8px 24px rgba(0, 240, 255, 0.18);
 }
 
 /* Fade-in animation */
@@ -214,6 +287,11 @@ footer {
   transform: translateY(0);
 }
 
+/* Scroll to top button tweaks */
+#scrollTopBtn {
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.7);
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   header {
@@ -223,12 +301,15 @@ footer {
   nav ul {
     position: absolute;
     top: 60px;
-    right: 0;
+    right: 10px;
     background: #111827;
     width: 220px;
     flex-direction: column;
     padding: 10px 0;
     display: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(0, 240, 255, 0.25);
   }
 
   nav ul.open {
